@@ -1,0 +1,20 @@
+
+
+</body>
+
+<script type="text/javascript">
+  let datetimeNodes = document.getElementsByClassName("datetime");
+  console.log(datetimeNodes);
+  for (let i = 0; i < datetimeNodes.length; i++) {
+    var str = datetimeNodes[i].innerHTML;
+    var str1 = str.substring(0, str.indexOf(":"));
+    var str2 = str1.substring(str1.lastIndexOf(" "));
+    datetimeNodes[i].innerHTML = str2 + "-" +  (Number(str2)+1);
+  }
+</script>
+
+<footer>
+  JIRO Moment © Play Your own Game | Get Quiet | Life is Short | Only Thing You Can Control is Your Effort
+</footer>
+
+</html>
