@@ -1,4 +1,5 @@
-CREATE TABLE effort (
+-- alias CREATE TABLE effort
+CREATE TABLE records (
 	  id INT AUTO_INCREMENT PRIMARY KEY,
     hour NUMERIC,
     description VARCHAR(255),
@@ -11,5 +12,6 @@ CREATE TABLE effort (
 CREATE TABLE rewards (
 
 )
-SELECT * FROM records WHERE DATE(created_at) = DATE(now()) 
+
+SELECT * FROM records WHERE DATE(created_at) = DATE(now())
 SELECT MONTH(created_at) FROM records

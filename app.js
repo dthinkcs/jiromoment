@@ -31,13 +31,32 @@ app.listen('4000', () => {
 });
 
 app.get("/", (req, res) => {
-      let sql = "SELECT *, DATE(created_at) as date_created_at FROM records";
+      let sql = "SELECT *, DATE(created_at) as date_created_at FROM effort WHERE DATE(created_at) = DATE(now()) ORDER BY created_at DESC";
       let query = db.query(sql, (err, results) => {
         if (err) throw err;
         res.render("list", {listTitle: 'the moment', newListItems: results});
         console.log(results);
         //res.send("YOLO...");
       });
+});
+
+app.post("/", function(req, res){
+
+  const description = req.body.newItem;
+  // const listName = req.body.list;
+  var d = Date();
+  var str = d.toString();
+  var str1 = str.substring(0, str.indexOf(":"));
+  var str2 = str1.substring(str1.lastIndexOf(" "));
+  var hr = Number(str2);
+
+  var post = {hour: hr, description: description};
+  var sql ='INSERT INTO effort SET ?';
+  var query = db.query(sql, post, function (error, results, fields) {
+    if (error) throw error;
+    // Neat!
+    res.redirect("/");
+  });
 });
 
 //

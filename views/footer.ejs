@@ -9,12 +9,15 @@
     var str = datetimeNodes[i].innerHTML;
     var str1 = str.substring(0, str.indexOf(":"));
     var str2 = str1.substring(str1.lastIndexOf(" "));
-    datetimeNodes[i].innerHTML = str2 + "-" +  (Number(str2)+1);
+    if ((Number(str2) + 1) >= 10)
+      datetimeNodes[i].innerHTML = str2 + "-" +  (Number(str2)+1);
+    else
+      datetimeNodes[i].innerHTML = str2 + "-0" +  (Number(str2)+1);
   }
 </script>
 
 <footer>
-  JIRO Moment © Play Your own Game | Get Quiet | Life is Short | Only Thing You Can Control is Your Effort
+  JIRO Moment © Play Your own Game | Awareness that arises From Paying Nonjudgemental Attention In the Present Moment As If Your Life Depends On It  | Only Thing You Can Control is Your Effort | Be Willing to give yourself 1000 chances
 </footer>
 
 </html>

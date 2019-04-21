@@ -16,7 +16,7 @@
 
     <form action="/delete" method="post">
       <div class="item">
-        <p> <span class="datetime"> <%=item.created_at%> </span> | <%=item.description%> </p>
+        <p> <b><em><span class="datetime"> <%=item.created_at%> </span> </em></b>| <%=item.description%> </p>
       </div>
       <input type="hidden" name="listName" value="<%= listTitle %>"></input>
     </form>
